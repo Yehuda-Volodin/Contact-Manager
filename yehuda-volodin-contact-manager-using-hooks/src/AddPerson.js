@@ -38,7 +38,7 @@ export default function AddPerson(props) {
                     </Label>
                     <Input
                         type="text"
-                        name="newContact"
+                        id="newContact"
                         placeholder="New contact name"
                         onChange={handleChange}
                         value={person}
