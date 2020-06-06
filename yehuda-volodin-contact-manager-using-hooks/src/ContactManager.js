@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'reactstrap';
 import './ContactManager.css';
-import AddPerson from './AddPerson';
-import PeopleList from './PeopleList';
+import AddContact from './AddContact';
+import ContactList from './ContactList';
 
 export default function ContactManager() {
     const [contacts, setContacts] = useState(["1"]);
@@ -19,8 +19,8 @@ export default function ContactManager() {
             <h1 className="mt-3" align="center" >
                 Contact Manager
             </h1>
-            <AddPerson handleSubmit={addContact}/>
-            <PeopleList peopleData={contacts}/>
+            <AddContact handleSubmit={addContact}/>
+            <ContactList contactsData={contacts}/>
         </Container>
     );
 }

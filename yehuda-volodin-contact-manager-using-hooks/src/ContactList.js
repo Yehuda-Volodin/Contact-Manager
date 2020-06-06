@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
-export default function PeopleList(props) {
-    PeopleList.propTypes = {
-        peopleData: PropTypes.arrayOf(PropTypes.string).isRequired,
+export default function ContactList(props) {
+    ContactList.propTypes = {
+        contactsData: PropTypes.arrayOf(PropTypes.string).isRequired,
     }
 
     const [itemId, setItemId] = useState(null);
@@ -13,7 +13,7 @@ export default function PeopleList(props) {
         setItemId(e.target.id)
     }
 
-    const listGroupItems = props.peopleData.map((val, index) =>
+    const listGroupItems = props.contactsData.map((element, index) =>
         <ListGroupItem
             active={itemId == index ? true : false}
             action
@@ -22,7 +22,7 @@ export default function PeopleList(props) {
             key={index}
             style= {{"text-align": "justify"}}
         >
-            {val}
+            {element}
             <> </>
             <Badge
                 pill

@@ -4,23 +4,24 @@ import { Row, Col, Button, Form, Label, Input } from 'reactstrap';
 import './ContactManager.css';
 
 
-export default function AddPerson(props) {
-    AddPerson.propTypes = {
+export default function AddContact(props) {
+    AddContact.propTypes = {
         handleSubmit: PropTypes.func.isRequired,
     }
 
-    const [person, setPerson] = useState("");
+    const [contact, setContact] = useState("");
 
     function handleChange(e) {
-        setPerson(e.target.value);
+        setContact(e.target.value);
     }
 
     function handleSubmit(e) {
-        if (person !== '') {
-            props.handleSubmit(person);
-            setPerson(''); 
-        }
         e.preventDefault();
+
+        if (contact !== '') {
+            props.handleSubmit(contact);
+            setContact('');
+        }
     }
 
     return (
@@ -41,7 +42,7 @@ export default function AddPerson(props) {
                         id="newContact"
                         placeholder="New contact name"
                         onChange={handleChange}
-                        value={person}
+                        value={contact}
                         bsSize="lg"
                     />
                 </Col>
