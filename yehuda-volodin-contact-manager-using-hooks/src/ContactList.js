@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
-import { ListGroup, ListGroupItem, Badge } from 'reactstrap';
+import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
 export default function ContactList(props) {
     ContactList.propTypes = {
@@ -10,13 +10,13 @@ export default function ContactList(props) {
     const [itemId, setItemId] = useState(null);
 
     function listGroupItemsOnClickHandler(e) {
-        setItemId(e.target.id);
+        setItemId(e.target.id.split("-")[1]);
     }
 
     function deleteBadgeOnClickHandler(e) {
         e.stopPropagation();
 
-        if(e.target.parentNode.id == props.contactsData.length-1 && e.target.parentNode.id == itemId){
+        if (e.target.parentNode.id.split("-")[1] == props.contactsData.length - 1 && e.target.parentNode.id.split("-")[1] == itemId) {
             setItemId(null);
         }
         props.handleDelete(e.target.parentNode.id)
@@ -24,21 +24,34 @@ export default function ContactList(props) {
 
     const listGroupItems = props.contactsData.map((element, index) =>
         <ListGroupItem
+            id={'listGroupItem-' + index}
+            key={index}
             active={itemId == index ? true : false}
             action
             onClick={listGroupItemsOnClickHandler}
-            id={index}
-            key={index}
         >
-            {element}
-            <> </>
-            <Badge
-                pill
-                color="danger"
-                onClick={deleteBadgeOnClickHandler}
-            >
-                Delete
-            </Badge>
+            <Row id={'row-' + index} className="justify-content-between">
+                <Col id={'col1-' + index}>
+                    {element}
+                </Col>
+                <Col
+                    id={'col2-' + index}
+                    style={{ "text-align": "end" }}
+                    xs="4"
+                    sm="4"
+                    md="2"
+                    lg="2"
+                    xl="2"
+                >
+                    <Badge
+                        pill
+                        color="danger"
+                        onClick={deleteBadgeOnClickHandler}
+                    >
+                        Delete
+                    </Badge>
+                </Col>
+            </Row>
         </ListGroupItem>
     );
 
