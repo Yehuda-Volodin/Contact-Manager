@@ -16,8 +16,7 @@ export default function AddContact(props) {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
-
+        e.preventDefault();        
         if (contact !== '') {
             props.handleSubmit(contact);
             setContact('');

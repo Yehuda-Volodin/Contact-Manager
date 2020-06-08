@@ -10,7 +10,16 @@ export default function ContactList(props) {
     const [itemId, setItemId] = useState(null);
 
     function listGroupItemsOnClickHandler(e) {
-        setItemId(e.target.id)
+        setItemId(e.target.id);
+    }
+
+    function deleteBadgeOnClickHandler(e) {
+        e.stopPropagation();
+
+        if(e.target.parentNode.id == props.contactsData.length-1 && e.target.parentNode.id == itemId){
+            setItemId(null);
+        }
+        props.handleDelete(e.target.parentNode.id)
     }
 
     const listGroupItems = props.contactsData.map((element, index) =>
@@ -20,13 +29,13 @@ export default function ContactList(props) {
             onClick={listGroupItemsOnClickHandler}
             id={index}
             key={index}
-            style= {{"text-align": "justify"}}
         >
             {element}
             <> </>
             <Badge
                 pill
                 color="danger"
+                onClick={deleteBadgeOnClickHandler}
             >
                 Delete
             </Badge>
