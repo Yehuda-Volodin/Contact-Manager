@@ -36,7 +36,7 @@ export default function ContactList(props) {
                 </Col>
                 <Col
                     id={'col2-' + index}
-                    style={{ "text-align": "end" }}
+                    className="horizontalAlignEnd"
                     xs="4"
                     sm="4"
                     md="2"

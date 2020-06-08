@@ -4,7 +4,29 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: #282c34;
+  background-repeat: round;
+  background-size: cover;
 }
 
+.horizontalAlignEnd{
+  text-align: end;
+}
 
+.displayNone{
+  display: none !important;
+}
 
+.positionFixedRight-2{
+  position: fixed;
+  right: 2%;
+}
+
+.selectBgFileLabel{
+  background-color: #ffc107;
+  color: #212529;
+  border: thin solid #ffc107;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 100;
+}
