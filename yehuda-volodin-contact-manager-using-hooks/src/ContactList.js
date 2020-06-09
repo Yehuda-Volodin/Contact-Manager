@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
+import './ContactManager.css';
 
 export default function ContactList(props) {
     ContactList.propTypes = {
@@ -56,7 +57,7 @@ export default function ContactList(props) {
     );
 
     return (
-        <ListGroup className="mt-3 mb-3">
+        <ListGroup className="mt-3 mb-3 maxHeightOverflow">
             {listGroupItems}
         </ListGroup>
     )
