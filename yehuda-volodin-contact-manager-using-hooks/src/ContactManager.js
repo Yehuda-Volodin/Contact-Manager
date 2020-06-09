@@ -5,6 +5,7 @@ import AddContact from './AddContact';
 import ContactList from './ContactList';
 
 import defaultBg from './defaultBg.jpg';
+import selectBg from './selectBg.png';
 
 export default function ContactManager() {
     const [contacts, setContacts] = useState(["1"]);
@@ -39,9 +40,9 @@ export default function ContactManager() {
             <Label
                 for="selectBackgroundFile"
                 size='sm'
-                className="positionFixedRight-2 selectBgFileLabel"
+                className="positionFixedRight-2 selectBgFileLabel"               
             >
-                Bg.
+                <img src={selectBg} alt="Bg." width="40" height="40" />
             </Label>
             <Input
                 type="file"
