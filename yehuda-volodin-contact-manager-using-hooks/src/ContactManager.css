@@ -1,4 +1,3 @@
-
 .contactManager {
   background-color: white;
   min-height: 100vh;
@@ -6,6 +5,7 @@
   color: #282c34;
   background-repeat: round;
   background-size: cover;
+  border-radius: 15px;
 }
 
 .contactManagerHeader{
