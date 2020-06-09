@@ -4,9 +4,11 @@ import './ContactManager.css';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 
+import defaultBg from './defaultBg.jpg';
+
 export default function ContactManager() {
     const [contacts, setContacts] = useState(["1"]);
-    const [backgroundFile, setBackgroundFile] = useState(null);
+    const [backgroundFile, setBackgroundFile] = useState(defaultBg);
 
     useEffect(() => {
         setContacts(["Agent K", "Thomas Anderson", "Bruce Wayne"])
@@ -49,7 +51,7 @@ export default function ContactManager() {
                 className="displayNone"
                 onInput={selectBackgroundFileInputHandler}
             />
-            <h1 className="mt-3" align="center" >
+            <h1 className="mt-3 contactManagerHeader" align="center" >
                 Contact Manager
             </h1>
             <AddContact handleSubmit={addContact} />

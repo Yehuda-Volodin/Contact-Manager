@@ -8,6 +8,10 @@
   background-size: cover;
 }
 
+.contactManagerHeader{
+  font-family: fantasy;
+}
+
 .horizontalAlignEnd{
   text-align: end;
 }
