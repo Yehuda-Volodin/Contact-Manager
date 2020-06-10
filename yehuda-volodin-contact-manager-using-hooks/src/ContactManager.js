@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Input, Label } from 'reactstrap';
 import './ContactManager.css';
+
+import MainHeader from './MainHeader';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 
@@ -52,9 +54,7 @@ export default function ContactManager() {
                 className="displayNone"
                 onInput={selectBackgroundFileInputHandler}
             />
-            <h1 className="mt-3 contactManagerHeader" align="center" >
-                Contact Manager
-            </h1>
+            <MainHeader headerText="Contact Manager" headerStyle={{ "fontFamily": "fantasy" }}/>
             <AddContact handleSubmit={addContact} />
             <ContactList contactsData={contacts} handleDelete={deleteContact} />
         </Container>
