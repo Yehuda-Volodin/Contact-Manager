@@ -16,7 +16,7 @@ export default function AddContact(props) {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();        
+        e.preventDefault();
         if (contact !== '') {
             props.handleSubmit(contact);
             setContact('');
@@ -43,6 +43,7 @@ export default function AddContact(props) {
                         onChange={handleChange}
                         value={contact}
                         bsSize="lg"
+                        className="fontSize"
                     />
                 </Col>
                 <Col>
@@ -50,6 +51,7 @@ export default function AddContact(props) {
                         type="submit"
                         color="success"
                         size="lg"
+                        className="fontSize"
                     >
                         Add
                     </Button>

@@ -34,7 +34,7 @@ export default function ContactManager() {
 
     return (
         <Container 
-            className="contactManager"
+            className="contactManager fontSize"
             style={{ "backgroundImage" : `url(${backgroundFile})` }}
         >
             <Label
