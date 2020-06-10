@@ -14,24 +14,6 @@
   text-align: end;
 }
 
-.displayNone{
-  display: none !important;
-}
-
-.positionFixedRight-2{
-  position: fixed;
-  right: 2%;
-}
-
-.selectBgFileLabel{
-  color: #212529;
-  border: thin solid #ffc107;
-  border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  z-index: 100;
-}
-
 .maxHeightOverflow{
   max-height: 40vh;
   overflow: auto;

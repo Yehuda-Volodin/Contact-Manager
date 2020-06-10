@@ -11,7 +11,8 @@ export default function MainHeader(props) {
         <h1
             className="mt-3"
             style={props.headerStyle}
-            align="center" >
+            align="center"
+        >
             {props.headerText}
         </h1>
     )
