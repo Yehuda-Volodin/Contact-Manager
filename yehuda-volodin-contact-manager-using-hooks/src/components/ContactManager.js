@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Input, Label } from 'reactstrap';
+import { Container } from 'reactstrap';
+import axios from "axios";
 import './ContactManager.css';
 
 import SelectFile from './SelectFile';
@@ -15,7 +16,12 @@ export default function ContactManager() {
     const [backgroundFile, setBackgroundFile] = useState(defaultBg);
 
     useEffect(() => {
-        setContacts(["Agent K", "Thomas Anderson", "Bruce Wayne"])
+        axios.get('https://my-json-server.typicode.com/Yehuda-Volodin/fake-server/contacts_list'
+        ).then(res => {
+            setContacts([...res.data]);
+        }).catch((err) => {
+            alert(err);
+        });
     }, []);
 
     function selectBackgroundFileInputHandler(e) {
