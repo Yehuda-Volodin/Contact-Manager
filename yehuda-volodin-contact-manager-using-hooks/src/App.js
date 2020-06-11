@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactManager from './ContactManager';
+import ContactManager from './components/ContactManager';
 
 function App() {
   return (

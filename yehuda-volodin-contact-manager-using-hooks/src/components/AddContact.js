@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Row, Col, Button, Form, Label, Input } from 'reactstrap';
 import './ContactManager.css';
 
-
 export default function AddContact(props) {
     AddContact.propTypes = {
         handleSubmit: PropTypes.func.isRequired,
