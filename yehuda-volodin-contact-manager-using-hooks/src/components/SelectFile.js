@@ -21,6 +21,7 @@ export default function SelectFile(props) {
                         "borderRadius": "5px",
                         "paddingLeft": "5px",
                         "paddingRight": "5px",
+                        "cursor": "pointer",
                         "zIndex": "100"
                     },
                     ...props.labelStyle

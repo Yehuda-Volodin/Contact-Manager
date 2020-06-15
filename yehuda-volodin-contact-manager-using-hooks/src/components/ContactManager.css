@@ -14,6 +14,10 @@
   text-align: end;
 }
 
+.cursorPointer{
+  cursor: pointer;
+}
+
 .maxHeightOverflow{
   max-height: 40vh;
   overflow: auto;

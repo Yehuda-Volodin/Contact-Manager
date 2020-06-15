@@ -61,13 +61,13 @@ export default function ContactManager() {
                     "position": "fixed",
                     "right": "2%",
                     "color": "#ffc107",
-                    "border": "thin solid #ffc107",
+                    "border": "thin solid #ffc107",                    
                 }}
                 onInput={selectBackgroundFileInputHandler}
             />
             <MainHeader headerText="Contact Manager" headerStyle={{ "fontFamily": "fantasy" }} />
             <AddContact handleSubmit={addContact} />
-            <ContactList contactsData={contacts} handleDelete={deleteContact} />
+            <ContactList contactsData={contacts} handleDelete={deleteContact} handleEdit={setContacts}/>
         </Container>
     );
 }

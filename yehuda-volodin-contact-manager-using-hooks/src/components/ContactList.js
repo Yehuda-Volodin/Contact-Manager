@@ -14,6 +14,13 @@ export default function ContactList(props) {
         setItemId(e.target.id.split("-")[1]);
     }
 
+    function editBadgeOnClickHandler(e){
+        e.stopPropagation();
+
+        // props.contactsData[e.target.parentNode.id.split("-")[1]]
+        // props.handleEdit([...newContacts])
+    }
+
     function deleteBadgeOnClickHandler(e) {
         e.stopPropagation();
 
@@ -46,7 +53,26 @@ export default function ContactList(props) {
                 >
                     <Badge
                         pill
+                        color="warning"
+                        className="cursorPointer"
+                        onClick={editBadgeOnClickHandler}
+                    >
+                        Edit
+                    </Badge>
+                </Col>
+                <Col
+                    id={'col3-' + index}
+                    className="horizontalAlignEnd"
+                    xs="4"
+                    sm="4"
+                    md="2"
+                    lg="2"
+                    xl="2"
+                >
+                    <Badge
+                        pill
                         color="danger"
+                        className="cursorPointer"
                         onClick={deleteBadgeOnClickHandler}
                     >
                         Delete
