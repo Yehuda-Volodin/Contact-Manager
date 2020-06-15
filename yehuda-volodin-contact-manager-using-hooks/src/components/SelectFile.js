@@ -8,7 +8,7 @@ export default function SelectFile(props) {
     SelectFile.propTypes = {
         id: PropTypes.string.isRequired,
         fileTypes: PropTypes.string,
-        labelInnerJSX: PropTypes.string.isRequired,
+        labelInnerJSX: PropTypes.object.isRequired,
         labelStyle: PropTypes.object,
         onInput: PropTypes.func,
     }

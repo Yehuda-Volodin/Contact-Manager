@@ -61,7 +61,7 @@ export default function ContactManager() {
                     "position": "fixed",
                     "right": "2%",
                     "color": "#ffc107",
-                    "border": "thin solid #ffc107",                    
+                    "border": "thin solid #ffc107"                   
                 }}
                 onInput={selectBackgroundFileInputHandler}
             />

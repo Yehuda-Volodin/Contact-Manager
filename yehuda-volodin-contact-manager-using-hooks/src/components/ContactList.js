@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
-import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
+import { Row, Col, ListGroup, ListGroupItem, Input, Badge } from 'reactstrap';
 import './ContactManager.css';
 
 export default function ContactList(props) {
@@ -9,16 +9,26 @@ export default function ContactList(props) {
     }
 
     const [itemId, setItemId] = useState(null);
+    const [isEditedId, setIsEditedId] = useState(null);
+
+    useEffect(() => {
+        if (isEditedId != null) {
+            document.getElementById("editName-" + isEditedId).focus();
+        }
+    }, [isEditedId])
 
     function listGroupItemsOnClickHandler(e) {
         setItemId(e.target.id.split("-")[1]);
     }
 
-    function editBadgeOnClickHandler(e){
-        e.stopPropagation();
-
-        // props.contactsData[e.target.parentNode.id.split("-")[1]]
-        // props.handleEdit([...newContacts])
+    function editBadgeOnClickHandler(e) {
+        setIsEditedId(e.target.parentNode.id.split("-")[1]);
+    }
+    function saveBadgeOnClickHandler(e) {
+        let newContacts = props.contactsData;
+        newContacts[isEditedId] = document.getElementById("editName-" + isEditedId).value;
+        props.handleEdit([...newContacts]);
+        setIsEditedId(null);
     }
 
     function deleteBadgeOnClickHandler(e) {
@@ -40,35 +50,45 @@ export default function ContactList(props) {
         >
             <Row id={'row-' + index} className="justify-content-between">
                 <Col id={'col1-' + index}>
-                    {element}
+                    {isEditedId == index ?
+                        <>
+                            <Input
+                                id={'editName-' + index}
+                                defaultValue={element}
+                            />
+                        </>
+                        :
+                        element
+                    }
                 </Col>
                 <Col
                     id={'col2-' + index}
-                    className="horizontalAlignEnd"
+                    className="horizontalAlignCenter"
                     xs="4"
-                    sm="4"
-                    md="2"
-                    lg="2"
-                    xl="2"
+                    sm="5"
+                    md="4"
+                    lg="3"
+                    xl="3"
                 >
-                    <Badge
-                        pill
-                        color="warning"
-                        className="cursorPointer"
-                        onClick={editBadgeOnClickHandler}
-                    >
-                        Edit
-                    </Badge>
-                </Col>
-                <Col
-                    id={'col3-' + index}
-                    className="horizontalAlignEnd"
-                    xs="4"
-                    sm="4"
-                    md="2"
-                    lg="2"
-                    xl="2"
-                >
+                    {isEditedId == index ?
+                        <Badge
+                            pill
+                            color="warning"
+                            className="cursorPointer"
+                            onClick={saveBadgeOnClickHandler}
+                        >
+                            Save
+                        </Badge>
+                        :
+                        <Badge
+                            pill
+                            color="success"
+                            className="mr-1 cursorPointer"
+                            onClick={editBadgeOnClickHandler}
+                        >
+                            Edit
+                        </Badge>
+                    }
                     <Badge
                         pill
                         color="danger"
