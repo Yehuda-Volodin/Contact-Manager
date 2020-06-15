@@ -22,9 +22,11 @@ export default function ContactList(props) {
     }
 
     function editBadgeOnClickHandler(e) {
+        e.stopPropagation();
         setIsEditedId(e.target.parentNode.id.split("-")[1]);
     }
     function saveBadgeOnClickHandler(e) {
+        e.stopPropagation();
         let newContacts = props.contactsData;
         newContacts[isEditedId] = document.getElementById("editName-" + isEditedId).value;
         props.handleEdit([...newContacts]);
