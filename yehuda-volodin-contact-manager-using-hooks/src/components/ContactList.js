@@ -50,7 +50,7 @@ export default function ContactList(props) {
             action
             onClick={listGroupItemsOnClickHandler}
         >
-            <Row id={'row-' + index} className="justify-content-between">
+            <Row id={'row-' + index} className="justify-content-between align-items-center">
                 <Col id={'col1-' + index}>
                     {isEditedId == index ?
                         <>
@@ -66,7 +66,7 @@ export default function ContactList(props) {
                 <Col
                     id={'col2-' + index}
                     className="horizontalAlignCenter"
-                    xs="4"
+                    xs="5"
                     sm="5"
                     md="4"
                     lg="3"
@@ -76,7 +76,7 @@ export default function ContactList(props) {
                         <Badge
                             pill
                             color="warning"
-                            className="cursorPointer"
+                            className="mr-1 ml-1 cursorPointer"
                             onClick={saveBadgeOnClickHandler}
                         >
                             Save
@@ -85,7 +85,7 @@ export default function ContactList(props) {
                         <Badge
                             pill
                             color="success"
-                            className="mr-1 cursorPointer"
+                            className="mr-1 ml-1 cursorPointer"
                             onClick={editBadgeOnClickHandler}
                         >
                             Edit
