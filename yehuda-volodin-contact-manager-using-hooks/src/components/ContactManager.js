@@ -12,7 +12,7 @@ import defaultBg from './defaultBg.jpg';
 import selectBg from './selectBg.png';
 
 export default function ContactManager() {
-    const [contacts, setContacts] = useState(["1"]);
+    const [contacts, setContacts] = useState(["First Contact"]);
     const [backgroundFile, setBackgroundFile] = useState(defaultBg);
 
     useEffect(() => {
