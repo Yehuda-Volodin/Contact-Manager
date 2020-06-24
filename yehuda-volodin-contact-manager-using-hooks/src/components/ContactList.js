@@ -29,7 +29,7 @@ export default function ContactList(props) {
     }
     function saveBadgeOnClickHandler(e) {
         e.stopPropagation();
-        let newContacts = props.contactsData;
+        let newContacts = [...props.contactsData];
         newContacts[isEditedId] = document.getElementById("editName-" + isEditedId).value;
         props.handleEdit([...newContacts]);        
         setIsEditedId(null);
@@ -37,11 +37,11 @@ export default function ContactList(props) {
 
     function deleteBadgeOnClickHandler(e) {
         e.stopPropagation();
-
-        if (e.target.parentNode.id.split("-")[1] == props.contactsData.length - 1 && e.target.parentNode.id.split("-")[1] == itemId) {
+        const index = e.target.parentNode.id.split("-")[1];
+        if (index == props.contactsData.length - 1 && index == itemId) {
             setItemId(null);
         }
-        props.handleDelete(e.target.parentNode.id)
+        props.handleDelete(index)
     }
 
     const listGroupItems = props.contactsData.map((element, index) =>

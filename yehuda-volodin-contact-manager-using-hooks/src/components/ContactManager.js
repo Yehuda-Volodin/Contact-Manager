@@ -36,7 +36,7 @@ export default function ContactManager() {
     }
 
     function deleteContact(id) {
-        let newContacts = contacts;
+        let newContacts = [...contacts];
         newContacts.splice(id, 1);
         setContacts([...newContacts])
     }
