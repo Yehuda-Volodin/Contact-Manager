@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5e3ba20a541d70839d3adb6edc185cd3",
+    "revision": "6675c2150f6de7401dc49ab64d0fcb52",
     "url": "/Contact-Manager/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Contact-Manager/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "d3431ca8d2286c32714b",
+    "revision": "467815bad30a3d52cd13",
     "url": "/Contact-Manager/static/css/main.ebdb694d.chunk.css"
   },
   {
@@ -20,15 +20,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Contact-Manager/static/js/2.753818bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d3431ca8d2286c32714b",
-    "url": "/Contact-Manager/static/js/main.afad0a51.chunk.js"
+    "revision": "467815bad30a3d52cd13",
+    "url": "/Contact-Manager/static/js/main.43cbac89.chunk.js"
   },
   {
     "revision": "bffdad65727f70aa0d62",
     "url": "/Contact-Manager/static/js/runtime-main.f4e41be6.js"
   },
   {
-    "revision": "257009bb7b307af9e2bc1af543bdf241",
-    "url": "/Contact-Manager/static/media/defaultBg.257009bb.jpg"
+    "revision": "95a915f6a3eb281c851facc5e3b7e645",
+    "url": "/Contact-Manager/static/media/defaultBg.95a915f6.webp"
   }
 ]);
