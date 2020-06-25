@@ -8,7 +8,7 @@ import MainHeader from './MainHeader';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 
-import defaultBg from './defaultBg.webp';
+import defaultBg from './defaultBg.jpg';
 import selectBg from './selectBg.png';
 
 export default function ContactManager() {
